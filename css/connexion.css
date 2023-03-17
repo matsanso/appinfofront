@@ -1,0 +1,124 @@
+
+img{
+    
+    display: block;
+        margin: auto;
+    border : none;
+    
+        
+    display: block;
+margin-left: auto;
+margin-right: auto; 
+position: fixed;
+bottom:77%;
+left:44%;
+width:10%;
+}
+body{
+background-image:linear-gradient(rgb(222, 167, 167), rgb(255, 255, 255));
+background-repeat: no-repeat;
+}
+#container{
+width:400px;
+margin:0 auto;
+margin-top:10%;
+}
+/* Bordered form */
+form {
+width:100%;
+padding: 30px;
+border: 1px solid #f1f1f1;
+background: #fff;
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+width: 38%;
+margin: 0 auto;
+padding-bottom: 10px;
+}
+
+/* Full-width inputs */
+
+input[type=text], input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #000000;
+box-sizing: border-box;
+}
+input[type="checkbox"]:checked, input[type="password"] {
+-webkit-text-security: none;
+
+}
+
+input[type="password"] {
+-webkit-text-security: disc; 
+
+}
+
+
+
+/* Set a style for all buttons */
+input[type=submit], input[type="login"] {
+background: linear-gradient(to right,rgb(246, 70, 6),orange);
+color: rgb(255, 255, 255);
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 50%;
+}
+input[type=submit]:hover, input[type="login"] {
+background-color: white;
+color: #ffffff;
+border: 1px solid #000000;
+}
+input[id="oubli"] { 
+background: red;
+position: absolute;
+left: 650px;
+right: 0px;
+top: 322px;
+bottom:0px;   
+width: 13%;
+height: 8%;
+}
+input[id=oubli]:hover{
+background-color: rgb(255, 0, 0);
+color: #ffffff;
+border: 1px solid #000000;
+}
+
+
+body{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+    a{position: absolute;
+        left: 658px;
+        right: 0px;
+        top: 380px;
+        bottom:0px;
+        width: 13%;
+        height: 8%;
+
+    }
+        a:link {
+            color: rgb(0, 0, 0);
+}
+
+        a:visited {
+            color: rgb(255, 131, 60);
+}
+        a:hover {
+
+            color: #6477f3;
+            border: solid 1px, black;
+        }
+        a:active {
+            color: red;
+            border: solid 1px, black;
+        
+}
+
