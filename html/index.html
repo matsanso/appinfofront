@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 	<title>Technologie de Protection pour les Combattants du Feu</title>
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" href="../css/index.css">
 	<link rel="icon" href="../images/Mon projet (4).png">
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 </head>
+
 <body>
 	<header>
 		<div class="logo">
 			<img src="../images/Mon projet (4).png" alt="Logo">
 		</div>
-		
+
 		<nav>
 			<ul>
-				<div class = "superbounce">
-				<li><a href="produit.html">Produit</a></li>
+				<div class="superbounce">
+					<li><a href="produit.html">Produit</a></li>
 				</div>
-				<div class = "superbounce2">
-				<li><a href="Histoire.html">Histoire</a></li>
+				<div class="superbounce2">
+					<li><a href="Histoire.html">Histoire</a></li>
 				</div>
-		
+
 			</ul>
 		</nav>
-		
-		<div class="login">
-			<a href="page_connexion_site.html">Connexion/Inscription</a>
+
+		<div class="search-container">
+			<span class="search-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+					<path
+						d="M21.71 20.29l-3.88-3.88A9.96 9.96 0 0 0 20 10c0-5.52-4.48-10-10-10S0 4.48 0 10s4.48 10 10 10c2.38 0 4.56-.82 6.41-2.17l3.88 3.88a.996.996 0 1 0 1.41-1.41zM10 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z">
+					</path>
+				</svg>
+			</span> <!-- Symbole de loupe noire simple -->
+			<input type="text" id="search" placeholder="Recherche..." size="8" />
+		</div>
+		<script src="../js/index.js"></script>
+
+		<div id="nav-dropdown" class="navbar-dropdown dropdown ml-3">
+			<button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<i class="bi bi-person"></i> Mon Compte <i class="bi bi-caret-down"></i>
+			</button>
+			<ul class="dropdown-content">
+				<li><a class="dropdown-item" href="../html/page_connexion_site.html">Connexion</a></li>
+				<li><a class="dropdown-item" href="../html/pageinscription.html">Inscription</a></li>
+			</ul>
 		</div>
 	</header>
 
@@ -35,47 +60,59 @@
 	</section>
 
 	<section class="features">
-		<h2>Pourquoi choisir notre produit ?</h2>
-		<div class="feature-item">
-			<img src="feature-1.png" alt="Caractéristique 1">
-			<h3>Caractéristique 1</h3>
-			<p>Description de la caractéristique 1</p>
-		</div>
-		<div class="feature-item">
-			<img src="feature-2.png" alt="Caractéristique 2">
-			<h3>Caractéristique 2</h3>
-			<p>Description de la caractéristique 2</p>
-		</div>
-		<div class="feature-item">
-			<img src="feature-3.png" alt="Caractéristique 3">
-			<h3>Caractéristique 3</h3>
-			<p>Description de la caractéristique 3</p>
-		</div>
+		<div class="container">
+			<h2>Quelques chiffres...</h2>
+			<div class="row">
+				<div class="counter">
+					<i class="fas fa-users"></i>
+					<div class="num">10000</div>
+					Utilisateurs actifs
+				</div>
+				<div class="row">
+					<div class="counter">
+						<i class="fas fa-users"></i>
+						<div class="num">850</div>
+						Pompiers sauvés grâce à TPCF
+					</div>
+					<div class="row">
+						<div class="counter">
+							<i class="fas fa-users"></i>
+							<div class="num">100</div>%
+							de clients satisfaits
+
+						</div>
+
+
+					</div>
+				</div>
 	</section>
 
-<footer>
-			<div class="separator"></div>
-	<div class="social-media">
+	<footer>
+		<div class="separator"></div>
+		<div class="social-media">
 
-		<div class = "instagram">
-			<a href="https://www.instagram.com/tpcf_france/"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+			<div class="instagram">
+				<a href="https://www.instagram.com/tpcf_france/"><img src="../images/instagram-logo.png"
+						alt="Instagram"></a>
+			</div>
+			<div class="facebook">
+				<a href="#"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+			</div>
+			<div class="twitter">
+				<a href="https://twitter.com/TPCF_france"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+			</div>
+
 		</div>
-		<div class = "facebook">
-			<a href="#"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+		<div class="separator"></div>
+		<div class="copyright">
+			<p>Tous droits réservés &copy; 2023</p>
 		</div>
-		<div class = "twitter">
-			<a href="https://twitter.com/TPCF_france"><img src="../images/twitter-logo.png" alt="Twitter"></a>
-		</div>
-
-	</div>
-			<div class="separator"></div>
-				<div class="copyright">
-					<p>Tous droits réservés &copy; 2023</p>
-				</div>
-</footer>
+	</footer>
 
 
 
 
-</body>	
+
+</body>
+
 </html>

@@ -1,121 +1,123 @@
-
-
-img{
-    
+img {
     display: block;
-    margin-left: auto;
-    margin-right: auto; 
-    position: fixed;
-    bottom:77%;
-    left:44%;
-    width:10%;
-   
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
 
+body {
+    background-image: linear-gradient(rgb(171, 222, 167), rgb(255, 255, 255));
+    background-repeat: no-repeat;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
-body{
-background-image:linear-gradient(rgb(171, 222, 167), rgb(255, 255, 255));
-background-repeat: no-repeat;
-}
-#container{
-width:400px;
-margin:0 auto;
-margin-top:10%;
+
+#container {
+    width: 40%;
+    margin: 0 auto;
+
 }
 
 form {
-width:100%;
-padding: 30px;
-border: 1px solid #f1f1f1;
-background: #fff;
-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-#container h1{
-width: 38%;
-margin: 0 auto;
-padding-bottom: 10px;
+
+#container h1 {
+    width: 38%;
+
+    padding-bottom: 10px;
 }
 
 
 
-input[type=text], input[type=password] {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #000000;
-box-sizing: border-box;
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
-input[type="checkbox"]:checked, input[type="password"] {
--webkit-text-security: none;
+
+input[type="checkbox"]:checked,
+input[type="password"] {
+    -webkit-text-security: none;
 
 }
 
 input[type="password"] {
--webkit-text-security: disc; 
+    -webkit-text-security: disc;
 
 }
 
 
-input[type=submit], input[type="register"] {
-background: linear-gradient(to right,rgb(147, 254, 143),rgb(145, 145, 145));
-color: rgb(255, 255, 255);
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 100%;
-}
-input[type=submit]:hover, input[type="register"] {
-background-color: white;
-color: #ffffff;
-border: 1px solid #000000;
-}
-input[type=text], input[type=email] {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #000000;
-box-sizing: border-box;
+input[type=submit],
+input[type="register"] {
+    background: linear-gradient(to right, rgb(147, 254, 143), rgb(145, 145, 145));
+    color: rgb(255, 255, 255);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
 }
 
-input[type=text], input[type=Adress] {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #000000;
-box-sizing: border-box;
+input[type=submit]:hover,
+input[type="register"] {
+    background-color: white;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
 }
 
-body{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-
+input[type=text],
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
-a{position: absolute;
-    left: 658px;
-    right: 0px;
-    top: 380px;
-    bottom:0px;
-    width: 13%;
-    height: 8%;
-
-}
-    a:link {
-        color: rgb(0, 0, 0);
+input[type=text],
+input[type=Adress] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
-    a:visited {
-        color: rgb(255, 131, 60);
-}
-    a:hover {
 
-        color: #6477f3;
-        border: solid 1px, black;
-    }
-    a:active {
-        color: red;
-        border: solid 1px, black;
-    
+
+
+
+a:link {
+    color: rgb(0, 0, 0);
 }
 
+a:visited {
+    color: rgb(255, 131, 60);
+}
+
+a:hover {
+
+    color: #6477f3;
+    border: solid 1px, black;
+}
+
+a:active {
+    color: red;
+    border: solid 1px, black;
+
+}
