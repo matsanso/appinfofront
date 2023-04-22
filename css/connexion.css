@@ -81,7 +81,7 @@ input[type="login"] {
 
 input[type=submit]:active,
 input[type="login"]:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 1px #707070;
     transform: translate(5px);
 }
 
