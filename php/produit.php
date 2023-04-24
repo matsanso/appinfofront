@@ -21,10 +21,6 @@
             <div class="superbounce2">
                 <li><a href="Histoire.html">Histoire</a></li>
             </div>
-            <div class="superbounce2">
-                <li><a href="../html/FAQ.html">FAQ</a></li>
-            </div>
-        </ul>
         </ul>
     </nav>
 
