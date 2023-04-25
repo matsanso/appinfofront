@@ -25,7 +25,7 @@
                     <li><a href="produit.html">Produit</a></li>
                 </div>
                 <div class="superbounce2">
-                    <li><a href="Histoire.html">Histoire</a></li>
+                    <li><a href="Histoire.php">Histoire</a></li>
                 </div>
                 <div class="superbounce2">
                     <li><a href="#FAQ">FAQ</a></li>

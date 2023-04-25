@@ -1165,6 +1165,7 @@ details summary {
     transition: 0.5s;
 }
 
+
 button.user_profile_tabs.active {
     opacity: 1 !important;
     text-decoration: underline !important;
