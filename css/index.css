@@ -208,7 +208,7 @@ nav ul {
 /* Style pour la section features */
 
 .features {
-  background-color: #c8c2bf;
+
   padding: 100px 0;
 }
 
@@ -245,15 +245,16 @@ nav ul {
 /*style pour le quizz*/
 body {
   font-family: sans-serif;
-  background-color: #c8c2bf;
+  background-color: #f1f1f1;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-image: linear-gradient(#eaa143, #eadc49);
   box-shadow: 0px 0px 10px #999;
+  margin-bottom: 5%;
 }
 
 h1 {

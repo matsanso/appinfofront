@@ -29,9 +29,9 @@
 
         <input type="submit" id='login' value='Se connecter'>
 
-        <a href="../html/mdpoubli.html"><input type="submit" id='oubli' value='Mot de passe oublié ?'></a>
+        <a href="mdpoubli.php"><input type="submit" id='oubli' value='Mot de passe oublié ?'></a>
 
-        <a class='inscrit' href="../html/pageinscription.html">Pas encore membre ? </a>
+        <a class='inscrit' href="pageinscription.php">Pas encore membre ? </a>
 
 
 

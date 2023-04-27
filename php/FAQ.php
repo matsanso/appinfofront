@@ -17,19 +17,19 @@
 <body>
     <header>
         <div class="logo">
-            <a href="../html/index.html"><img src="../images/Mon projet (4).png" alt="Logo"></a>
+            <a href="index.php"><img src="../images/Mon projet (4).png" alt="Logo"></a>
         </div>
 
         <nav>
             <ul>
                 <div class="superbounce">
-                    <li><a href="produit.html">Produit</a></li>
+                    <li><a href="produit.php">Produit</a></li>
                 </div>
                 <div class="superbounce2">
-                    <li><a href="Histoire.html">Histoire</a></li>
+                    <li><a href="Histoire.php">Histoire</a></li>
                 </div>
                 <div class="superbounce2">
-                    <li><a href="../html/FAQ.html">FAQ</a></li>
+                    <li><a href="FAQ.php">FAQ</a></li>
 
                 </div>
             </ul>

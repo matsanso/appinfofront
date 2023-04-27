@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <a href="../php/index.php"> <img src="../images/Mon projet (4).png"> </img></a>
+    <a href="index.php"> <img src="../images/Mon projet (4).png"> </img></a>
 
 
 

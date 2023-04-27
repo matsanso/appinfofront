@@ -19,16 +19,20 @@
             <img src="../images/Mon projet (4).png" alt="Logo">
         </div>
 
+
         <nav>
             <ul>
                 <div class="superbounce">
-                    <li><a href="produit.html">Produit</a></li>
+                    <li><a href="produit.php">Produit</a></li>
                 </div>
                 <div class="superbounce2">
                     <li><a href="Histoire.php">Histoire</a></li>
                 </div>
                 <div class="superbounce2">
-                    <li><a href="#FAQ">FAQ</a></li>
+                    <li><a href="#Quizz">Quizz</a></li>
+                </div>
+                <div class="superbounce2">
+                    <li><a href="FAQ.php">FAQ</a></li>
                 </div>
             </ul>
         </nav>
@@ -50,8 +54,8 @@
                 <i class="bi bi-person"></i> Mon Compte <i class="bi bi-caret-down"></i>
             </button>
             <ul class="dropdown-content">
-                <li><a class="dropdown-item" href="../html/page_connexion_site.html">Connexion</a></li>
-                <li><a class="dropdown-item" href="../html/pageinscription.html">Inscription</a></li>
+                <li><a class="dropdown-item" href="pageconnexion.php">Connexion</a></li>
+                <li><a class="dropdown-item" href="pageinscription.php">Inscription</a></li>
             </ul>
         </div>
 
@@ -91,7 +95,7 @@
     </section>
     <section>
 
-        <div id="FAQ">
+        <div id="Quizz">
             <div class="container">
                 <h1>Pour en apprendre plus sur TPCF :</h1>
                 <form>

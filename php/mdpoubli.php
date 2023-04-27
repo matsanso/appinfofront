@@ -1,3 +1,9 @@
+<?php
+$dsn = 'mysql:host=ADRESSE_DU_SERVEUR;dbname=VOTRE_BASE_DE_DONNEES;port=VOTRE_PORT;charset=VOTRE_ENCODAGE';
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +17,11 @@
 </head>
 
 <body>
+
+
+
     <div id="container">
+
 
 
         <h1>Mot de passe oublié ?</h1>
@@ -20,11 +30,14 @@
         <label><b>Veuillez indiquer votre adresse e-mail </b></label>
         <input type="text" placeholder="E-mail" name="username" required>
 
-        <a href="../php/mdpoubli2.php"><input type="submit" id='Register' value="Valider"></a>
+        <a href="mdpoubli2.php"><input type="submit" id='Register' value="Valider"></a>
 
 
 
     </div>
 </body>
+
+
+
 
 </html>
