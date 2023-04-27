@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    background-color: #c8c2bf;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.backbutton {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.backbutton img {
+    width: 8%;
+    height: 8%;
+
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+
+}
