@@ -1,0 +1,343 @@
+<!-- Header of page -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/resources/storage/Images/logo.ico">
+    <title>EKAÏ</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="/resources/css/navbar.css">
+
+    <!-- LIbrarie d'icones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <!-- fichier javascript -->
+    <script rel="text/JavaScript" src="/resources/js/app.js"></script>
+</head>
+
+<body>
+
+    <!-- Content of page -->
+
+    <img src="/resources/storage/Images/ocean2.jpg" class="w-100 background-image" alt="">
+
+    <!-- Navbar  of page -->
+    <!--<img src="/resources/storage/Images/fond.jpg" class="navbarback" alt="">-->
+    <nav class="navbar w-100">
+        <a class="d-inline-block pt-1 ml-2" href="/home"><img id="logo" src="/resources/storage/Images/logo-app2.png"
+                alt="" class="logo-navbar d-inline-block"></a>
+        <ul id="nav-ul" class="navbar-ul">
+            <li class="nav-item p-2 f-4">
+                <a class="active" aria-current="page" href="/product">Produit</a>
+            </li>
+            <li class="nav-item p-2 f-4">
+                <a class="active" href="/histoire">Histoire</a>
+            </li>
+            <li class="nav-item p-2 f-4">
+                <a class="active" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item p-2 f-4">
+                <a class="active" href="/faq">F.A.Q</a>
+            </li>
+        </ul>
+
+        <div id="nav-dropdown" class="navbar-dropdown dropdown ml-3">
+            <button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person"></i> Mon Compte <i class="bi bi-caret-down"></i>
+            </button>
+            <ul class="dropdown-content">
+                <li><a class="dropdown-item" href="/login">Connexion</a></li>
+                <li><a class="dropdown-item" href="/register">Inscription</a></li>
+
+
+
+            </ul>
+        </div>
+
+        <div href="#" id="navIcon" onclick='showNav()' class="navIcon">
+            <i class="bi bi-list mx-4"></i>
+        </div>
+    </nav>
+
+    <script>
+        function showNav() {
+            var x = document.getElementById("nav-ul");
+            if (x.style.display === "none" || x.style.display == "") {
+                x.style.display = "block";
+                x.style.position = "relative";
+            } else {
+                x.style.display = "none";
+            }
+            var y = document.getElementById("nav-dropdown");
+            if (y.style.display === "none" || y.style.display == "") {
+                y.style.display = "block";
+                y.style.position = "relative";
+                y.style.margin = "0px 0px 50px 55px";
+            } else {
+                y.style.display = "none";
+            }
+        }
+        window.addEventListener("resize", function () {
+            var x = document.getElementById("nav-ul");
+            var y = document.getElementById("nav-dropdown");
+            if (window.matchMedia("(min-width: 768px)").matches) {
+                x.setAttribute("style", "");
+                y.setAttribute("style", "");
+            }
+        })
+    </script>
+    <div class="container   text-center p-3">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="titre">Notre Produit</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div class="break-col-6-md">
+                    <img src="/resources/storage/Images/Bracelet.png" id='montre' class="center montre-md mt-5" alt="">
+                </div>
+                <div class="break-col-6-md">
+                    <p class="f-3 p-2">
+                        Bracelet EKAÏ
+                    </p>
+                    <p class="f-2 p-2">
+                        69,96€
+                    </p>
+                    <p class="f-2 p-2">
+                        Plus qu'un bracelet EKAÏ s'adresse à toute une génération et permet à vous, futur possesseur,
+                        d'avoir un suivi continu de votre santé ainsi qu'une étude des risques que vous pouvez
+                        rencontrer dans la vie de tous les jours.
+                    </p>
+                    <p class="f-2 p-2">
+                        Taille unique et réglable.
+                    </p>
+                    <img src="/resources/storage/Images/drapeau.jpg" class="center drapeau" alt="">
+                    <p class="f-2 p-2">
+                        100% français
+                    </p>
+                </div>
+            </div>
+
+            <hr class="ligne">
+
+            <div class="row">
+                <div class="col-12">
+                    <p class="f-4 p-2 center"> Ce bracelet contient des capteurs de :</p>
+
+                    <br>
+
+                    <div class="row px-5">
+                        <div class="capteurs col-12">
+                            <img src="/resources/storage/Images/chute.png" class="center img-produit box" alt="">
+                            <div class='tooltip' id="texte">
+                                Détection de chute :
+                                <br>
+                                Le bracelet EKAÏ est muni d'un accéléromètre qui
+                                <br>
+                                permet de détecter et d'alerter en cas de chute du porteur
+                                <br>
+                                un membre de sa famille ou les autorités afin que l'utilisateur
+                                <br>
+                                soit pris en charge le plus rapidement possible.
+                            </div>
+                        </div>
+                        <div class="capteurs col-12">
+                            <img src="/resources/storage/Images/coeur.png" class="center img-produit box" alt="">
+                            <div class='tooltip' id="texte">Capteur cardiaque :
+                                <br>
+                                Le bracelet EKAÏ est muni d'un électrocardiogramme
+                                <br>
+                                qui permet de mesurer le rythme cardiaque de la
+                                <br>
+                                personne tant que celle-ci le garde.
+                                <br>
+                                Un rythme cardiaque trop élevé sera suivi d'une alerte.
+                            </div>
+                        </div>
+                        <div class="capteurs col-12">
+                            <img src="/resources/storage/Images/envi.png" class="center img-produit box" alt="">
+                            <div class='tooltip' id="texte">Capteur GPS :
+                                <br>
+                                Le bracelet EKAÏ étant muni d'une puce GPS
+                                <br>
+                                permet donc de suivre en temps réel certaines données
+                                <br>
+                                comme la pollution athmosphérique ou encore
+                                <br>
+                                la température à l'endroit où se situe l'utilisateur.
+                                <br>
+                                Une trop forte exposition à une pollution atmosphérique
+                                <br>
+                                ou encore à une température extérieure trop élevée
+                                <br>
+                                sera suivie d'une alerte.
+                            </div>
+                        </div>
+
+                        <div class="capteurs col-12">
+                            <img src="/resources/storage/Images/temp.png" class="center img-produit box" alt="">
+                            <div class='tooltip' id="texte"> Capteur de température corporelle :
+                                <br>
+                                Le bracelet EKAÏ est muni d'un thermomètre qui
+                                <br>
+                                permet de mesurer la température corporelle de l'utilisateur.
+                                <br>
+                                Si la température de l'utilisateur est trop élevé, une
+                                <br>
+                                notification lui sera envoyé pour qu'il puisse faire
+                                <br>
+                                le nécessaire pour sa santé.
+                            </div>
+                        </div>
+                        <div class="capteurs col-12">
+                            <img src="/resources/storage/Images/db.png" class="center img-produit box " alt="">
+                            <div class='tooltip' id="texte">Capteur sonore :
+                                <br>
+                                Le bracelet EKAÏ est muni d'un capteur sonore
+                                <br>
+                                permettant de mesurer le niveau de décibel où se trouve
+                                <br>
+                                l'utilisateur, en cas d'un niveau sonore trop élevé
+                                <br>
+                                le porteur recevra une notification.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="ligne d-block">
+
+            <div class='py-2 d-block'>
+                <p class="f-4 p-2 center">Détails du produit : </p>
+
+                <div class='center border-1 border-round-1-label tableContainer' id="productDetail">
+                    <table id='featuresTable'>
+                        <tbody>
+                            <tr>
+                                <th>Prix</th>
+                                <td>129€</td>
+                            </tr>
+                            <tr>
+                                <th>Poids</th>
+                                <td>300g</td>
+                            </tr>
+                            <tr>
+                                <th>Technologie de connectivité</th>
+                                <td>Bluetooth</td>
+                            </tr>
+                            <tr>
+                                <th>Autonomie</th>
+                                <td>24 heures</td>
+                            </tr>
+                            <tr>
+                                <th>Caractéristiques spéciales</th>
+                                <td>
+                                    <ul class="text-left">
+                                        <li>Suivi santé en continu </li>
+                                        <li>Assistance 24/24h </li>
+                                        <li>Ceinture confortable</li>
+                                        <li>Site simple d'utilisation </li>
+                                        <li>Grande autonomie </li>
+                                        <li>Alerte en cas de danger </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Couleur</th>
+                                <td>Rouge et noir</td>
+                            </tr>
+                            <tr>
+                                <th>Temps de chargement</th>
+                                <td>2 heure</td>
+                            </tr>
+                            <tr>
+                                <th>Piles nécessaires</th>
+                                <td>Non</td>
+                            </tr>
+                            <tr>
+                                <th>Chargeur inclus</th>
+                                <td>Oui</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer of page -->
+    <!-- Footer of page -->
+    <footer class="footer">
+        <ul class="social-icon">
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="https://www.facebook.com/profile.php?id=100086838558620">
+                    <img id="logo" src="/resources/storage/Images/facebook.png" class="icon ion-social-facebook"
+                        width="35px">
+                </a>
+            </li>
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img id="logo" src="/resources/storage/Images/twitter.png" class="icon ion-social-twitter"
+                        width="35px">
+                </a>
+            </li>
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="https://www.linkedin.com/in/jerald-ekai-2a56a5254/">
+                    <img id="logo" src="/resources/storage/Images/linkedin.png" class="icon ion-social-linkedin"
+                        width="35px">
+                </a>
+            </li>
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="https://www.instagram.com/ekai.jerald/">
+                    <img id="logo" src="/resources/storage/Images/instagram.png" class="icon ion-social-instagram"
+                        width="35px">
+                </a>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li class="menu__item">
+                <a class="menu__link" href="/home">Accueil</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="/product">Produit</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="/histoire">Histoire</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="/contact">Contact</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="/login">Connexion</a>
+            </li>
+
+        </ul>
+
+        <ul class="copyright">&copy;2023 JERALD | All Rights Reserved | <a href="/conditions">Conditions
+                d'utilisation</a> | <a href="/privacy">Politique de confidentialité</a></ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
