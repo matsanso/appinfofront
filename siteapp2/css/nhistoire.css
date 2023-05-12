@@ -1,0 +1,624 @@
+ /* Style de base pour la page */
+
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour le header */
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: rgb(179, 65, 65);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.dropdown {
+    display: var(--navUl);
+    color: red;
+}
+
+.dropdown-content {
+    margin: 0;
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
+    /*background-color: #f9f9f9;*/
+    width: 10%;
+    padding: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.443);
+    z-index: 100;
+    border-radius: 7px;
+
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+
+/*barre de recherche*/
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.search-icon {
+    font-size: 24px;
+    cursor: pointer;
+
+    /* Augmente le z-index pour que l'icône reste au-dessus de la barre de recherche */
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out;
+    /* Ajoute une transition pour l'opacité */
+}
+
+.search-container:hover input[type="text"],
+input[type="text"].visible {
+    opacity: 1;
+    /* Affiche la barre de recherche lorsque la souris survole le conteneur ou lorsqu'elle contient du texte */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.superbounce a {
+    margin-left: 40px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.superbounce2 a {
+    margin-left: 40px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.superbounce :hover {
+    animation-name: rebondir;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.superbounce2 :hover {
+    animation-name: rebondir;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes rebondir {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.login a {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login a:hover {
+    background-color: #666;
+}
+
+/* style body */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style titre */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+.Notre-histoire {
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    max-width: 80%; /* Limite la largeur à 80% de l'écran */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 2rem; /* Ajoute un peu d'espace autour du contenu */
+}
+
+
+.Notre-histoire h2 {
+color: #fff;
+font-size: 8em;
+position: absolute;
+transform: translate(40%, 10%);
+}
+
+.Notre-histoire h2:nth-child(1) {
+color: transparent;
+-webkit-text-stroke: 2px #000000;
+}
+
+.Notre-histoire h2:nth-child(2) {
+color: #000000;
+animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+0%,
+100% {
+    clip-path: polygon(
+    0% 45%,
+    16% 44%,
+    33% 50%,
+    54% 60%,
+    70% 61%,
+    84% 59%,
+    100% 52%,
+    100% 100%,
+    0% 100%
+    );
+}
+
+50% {
+    clip-path: polygon(
+    0% 60%,
+    15% 65%,
+    34% 66%,
+    51% 62%,
+    67% 50%,
+    84% 45%,
+    100% 46%,
+    100% 100%,
+    0% 100%
+    );
+}
+}
+
+/* Style trombinoscope */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 13%;
+}
+
+.ronds {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15%;
+}
+
+.rond {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rond img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.rond img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+div.rond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+div.rond img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+div.rond span {
+    text-align: center;
+}
+
+
+/* Style premier rectangle */
+
+.texte1_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.rectangle1 {
+    width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 5%;
+    margin-left: 11%;
+}
+  
+.rectangle1:hover {
+transform: scale(1.05);
+box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.rectangle1 h1 {
+font-size: 1.5rem;
+margin-bottom: 20px;
+}
+
+.rectangle1 p {
+font-size: 1rem;
+line-height: 1.5;
+margin: 0;
+}
+
+.rectangle1 li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+.rectangle1 li:last-child {
+    border-bottom: none;
+  }
+
+
+.rectangle1 p {
+    line-height: 1.5;
+}
+
+.texte1_2 {
+    display: flex;
+    justify-content: center;
+}
+
+.rectangle2 {
+    width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 5%;
+}
+  
+.rectangle2:hover {
+transform: scale(1.05);
+box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.rectangle2 h1 {
+font-size: 1.5rem;
+margin-bottom: 20px;
+}
+
+.rectangle2 p {
+font-size: 1rem;
+line-height: 1.5;
+margin: 0;
+}
+
+.rectangle2 li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+  
+.rectangle2 li:last-child {
+    border-bottom: none;
+}
+
+
+.rectangle2 p {
+    line-height: 1.5;
+}
+
+
+/* Style uc1 */
+
+.undercontainer1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 5%;
+}
+
+.texte2 {
+    display: flex;
+    margin-right: 10%;
+}
+
+.undercontainer1 img {
+    max-width: 50%;
+    height: auto;
+    margin-left: 10%;
+  }
+
+
+.uc1rectangle {
+    width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 5%;
+}
+  
+.uc1rectangle:hover {
+transform: scale(1.05);
+box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.uc1rectangle h1 {
+font-size: 1.5rem;
+margin-bottom: 20px;
+}
+
+.uc1rectangle p {
+font-size: 1rem;
+line-height: 1.5;
+margin: 0;
+}
+
+.uc1rectangle li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+.uc1rectangle li:last-child {
+    border-bottom: none;
+  }
+
+
+.uc1rectangle p {
+    line-height: 1.5;
+}
+
+.uc1undercontainer1 img {
+    max-width: 50%;
+    height: auto;
+    margin-left: 10%;
+  }
+
+  /* Style uc2 */
+
+.undercontainer2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 5%;
+}
+
+.undercontainer2 img {
+    max-width: 70%;
+    height: auto;
+    margin-right: 10%;
+  }
+
+.texte3 {
+    display: flex;
+    margin-left: 10%;
+}
+
+.uc2rectangle {
+    width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 5%;
+}
+
+.uc2rectangle:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.uc2rectangle h1 {
+    margin-bottom: 20px;
+}
+
+.uc2rectangle p {
+    line-height: 1.5;
+}
+
+/* Style uc3 */
+
+.undercontainer3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 5%;
+}
+
+.texte4 {
+    display: flex;
+    margin-left: 10%;
+}
+
+.uc3rectangle {
+    width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 5%;
+}
+
+.uc3rectangle:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+.uc3rectangle h1 {
+    margin-bottom: 20px;
+}
+
+.uc3rectangle p {
+    line-height: 1.5;
+}
+
+.undercontainer3 img {
+    max-width: 50%;
+    height: auto;
+    margin-left: 10%;
+  }
+
+/* Style pour le footer */
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.separator {
+    height: 2px;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.social-media div {
+    display: inline-flex;
+    margin: 0 10px;
+
+}
+
+.social-media img {
+    height: 40px;
+    cursor: pointer;
+
+}
+
+
+.instagram {
+    transition: all .2s ease-in-out;
+}
+
+.instagram:hover {
+    transform: scale(1.2)
+}
+
+.facebook {
+    transition: all .2s ease-in-out;
+}
+
+.facebook:hover {
+    transform: scale(1.2)
+}
+
+.twitter {
+    transition: all .2s ease-in-out;
+}
+
+.twitter:hover {
+    transform: scale(1.2)
+}
+
+.copyright p {
+    font-size: 0.8rem;
+    text-align: center;
+}

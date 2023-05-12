@@ -1,0 +1,360 @@
+/* Style de base pour la page */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style pour le header */
+
+header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: rgb(179, 65, 65);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.dropdown {
+  display: var(--navUl);
+  color: red;
+}
+
+.dropdown-content {
+  margin: 0;
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1);
+  /*background-color: #f9f9f9;*/
+  width: 10%;
+  padding: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.443);
+  z-index: 100;
+  border-radius: 7px;
+
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px;
+
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+
+/*barre de recherche*/
+
+.search-container {
+  display: flex;
+  align-items: center;
+
+}
+
+.search-icon {
+  font-size: 24px;
+  cursor: pointer;
+
+  /* Augmente le z-index pour que l'icÃ´ne reste au-dessus de la barre de recherche */
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+  /* Ajoute une transition pour l'opacitÃ© */
+}
+
+.search-container:hover input[type="text"],
+input[type="text"].visible {
+  opacity: 1;
+  /* Affiche la barre de recherche lorsque la souris survole le conteneur ou lorsqu'elle contient du texte */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin: 0 auto; /* Centrer horizontalement */
+
+}
+
+.superbounce a {
+  margin-left: 40px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.superbounce2 a {
+  margin-left: 40px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.superbounce :hover {
+  animation-name: rebondir;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.superbounce2 :hover {
+  animation-name: rebondir;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+
+@keyframes rebondir {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login a {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login a:hover {
+  background-color: #666;
+}
+
+/* Style pour la section hero */
+
+.hero {
+  background-image: url(../images/backgroundpompiers.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 830px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.cta {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta:hover {
+  background-color: #666;
+}
+
+/* Style pour la section features */
+
+.features {
+
+  padding: 100px 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.row {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+
+.counter-sec {
+  padding: 80px 0;
+  width: 100%;
+  background: #131416;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.num {
+  font-size: 40px;
+  margin: 20px 0;
+  color: #ff0000;
+}
+
+/*style pour le quizz*/
+body {
+  font-family: sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: linear-gradient(#eaa143, #eadc49);
+  box-shadow: 0px 0px 10px #999;
+  margin-bottom: 5%;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 30px;
+  font-size: 18px;
+  background-color: #008000;
+  color: #ffffff;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+
+
+
+/* Style pour le footer */
+
+footer {
+  background-color: #878787;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.separator {
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+.social-media div {
+  display: inline-flex;
+  margin: 0 10px;
+
+}
+
+.social-media img {
+  height: 40px;
+  cursor: pointer;
+
+}
+
+
+.instagram {
+  transition: all .2s ease-in-out;
+}
+
+.instagram:hover {
+  transform: scale(1.2)
+}
+
+.facebook {
+  transition: all .2s ease-in-out;
+}
+
+.facebook:hover {
+  transform: scale(1.2)
+}
+
+.twitter {
+  transition: all .2s ease-in-out;
+}
+
+.twitter:hover {
+  transform: scale(1.2)
+}
+
+.copyright p {
+  font-size: 0.8rem;
+  text-align: center;
+}
