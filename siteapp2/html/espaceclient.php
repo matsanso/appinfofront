@@ -18,7 +18,15 @@ $username = $_SESSION['username'];
     <!-- importer le fichier de style -->
     <link rel="stylesheet" href="../css/nvespaceclient.css" media="screen" type="text/css" />
     <link rel="icon" href="../images/Mon projet (4).png">
-
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
 </head>
 
 <body>

@@ -7,32 +7,36 @@ body {
 
 /* Style du top-bar */
 
-.top-bar {
-  background-color: #f35e5e;
+#top-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
+  align-items: center;
+  height: 50px;
+  background-color: #f35e5e;
   color: white;
-  font-size: 1.1em;
+  padding: 10px;
 }
-.top-bar a:hover {
+#top-bar img {
+  height: 40px;
+}
+#top-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#top-bar a:hover {
   background-color: #f59191c9;
   border-radius: 5px;
 }
-.top-bar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  margin-left: 30px;
+
+#top-bar span {
+  font-size: 16px;
+  font-weight: bold;
 }
-.top-bar img {
-  height: 40px;
-}
-  
-  .top-bar span {
-    margin-right: 10px;
-  }
 
   body {
     font-family: Arial, sans-serif;
@@ -97,3 +101,42 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table thead {
+  background-color: #007BFF;
+  color: white;
+}
+
+table thead th {
+  padding: 10px;
+  text-align: left;
+}
+
+table tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+

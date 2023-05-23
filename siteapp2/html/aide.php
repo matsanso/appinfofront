@@ -11,6 +11,15 @@ $username = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google Translate Widget -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
     <title>Page d'aide</title>
     <link rel="stylesheet" type="text/css" href="../css/naide.css">
   </head>

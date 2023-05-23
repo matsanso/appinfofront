@@ -14,7 +14,15 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 
 <head>
-
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
     <title>Technologie de Protection pour les Combattants du Feu</title>
     <link rel="stylesheet" href="../css/FAQ.css">
     <link rel="icon" href="../images/Mon projet (4).png">

@@ -80,7 +80,10 @@ button {
 button {
   background-color: #008CBA;
 }
-
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
 .result,
 .result2,
 .result3,

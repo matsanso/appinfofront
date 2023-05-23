@@ -1,6 +1,21 @@
 <?php
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=localhost;dbname=appg10c_db;charset=utf8', 'root', '');
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Vérifier si la caserne est définie dans la session
+if (isset($_SESSION['caserne'])) {
+  // Récupérer la caserne
+  $caserne = $_SESSION['caserne'];
+
+  // Afficher la caserne 
+  echo "Caserne: " . $caserne;
+} else {
+  // Gérer le cas où la caserne n'est pas définie dans la session
+  echo "Aucune caserne définie dans la session.";
+}
 
 // Vérifie si le formulaire de recherche a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -8,15 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $search = $_POST['search'];
 
   if ($search === 'all') {
-    // Afficher tous les utilisateurs
-    $stmt = $pdo->query("SELECT * FROM utilisateur");
+    // Afficher tous les utilisateurs de la même caserne
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE caserne = :caserne");
+    $stmt->execute(array(':caserne' => $caserne));
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
   } else {
-    // Prépare la requête SQL pour chercher l'utilisateur correspondant à l'ID ou à l'adresse e-mail
-    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE identifiant = :search OR email = :search");
+    // Prépare la requête SQL pour chercher l'utilisateur correspondant à l'ID ou à l'adresse e-mail et à la caserne
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE (identifiant = :search OR email = :search) AND caserne = :caserne");
 
     // Exécute la requête SQL avec les paramètres
-    $stmt->execute(array(':search' => $search));
+    $stmt->execute(array(':search' => $search, ':caserne' => $caserne));
 
     // Récupère l'utilisateur correspondant s'il existe
     $users = array($stmt->fetch(PDO::FETCH_ASSOC));
@@ -28,14 +44,10 @@ if ($users) {
   
     // Prépare la requête SQL pour chercher les données de capteurcardiaque correspondant à l'utilisateur
     $stmt = $pdo->prepare("SELECT * FROM capteurcardiaque WHERE idu = :idu");
-  
     // Exécute la requête SQL avec les paramètres
     $stmt->execute(array(':idu' => $idu));
-  
     // Récupère les données de capteurcardiaque correspondant à l'utilisateur s'il en existe
     $capteurcardiaque = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  
     // Vérifie si des données ont été trouvées dans la base de données
     if ($capteurcardiaque) {
       // Affiche les données de capteurcardiaque correspondant à l'utilisateur
@@ -111,6 +123,15 @@ if ($users) {
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google Translate Widget -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
     <title>Espace Gestionnaire</title>
     <meta charset="utf-8">
     <link rel="icon" href="../images/Mon projet (4).png">
@@ -129,15 +150,14 @@ if ($users) {
     <div id="container">
       <h1>Recherche d'utilisateur</h1>
 
-      <?php if (isset($error_msg)) { ?>
-        <p><?php echo $error_msg; ?></p>
-      <?php } ?>
 
       <form method="POST">
         <input type="text" placeholder="Rechercher un utilisateur par ID ou adresse e-mail" name="search" >
-        <input type="submit" id='submit' value='Rechercher'>
-        <button type="submit" name="search" value="all">Afficher tous les utilisateurs</button>
-      </form>
+        <div class="button-container">
+            <input type="submit" id='submit' value='Rechercher'>
+            <button type="submit" name="search" value="all">Afficher tous les utilisateurs</button>
+        </div>
+       </form>
 
       <?php if (isset($users)) { ?>
         <div class="result">
@@ -162,15 +182,16 @@ if ($users) {
               <tbody>
               <?php foreach ($users as $user) { ?>
                 <tr>
-                  <td><?php echo $user['identifiant']; ?></td>
-                  <td><?php echo $user['nom']; ?></td>
-                  <td><?php echo $user['prenom']; ?></td>
-                  <td><?php echo $user['email']; ?></td>
-                  <td><?php echo $user['telephone']; ?></td>
-                  <td><?php echo $user['age']; ?></td>
-                  <td><?php echo $user['poids']; ?></td>
-                  <td><?php echo $user['taille']; ?></td>
-                  <td><?php echo $user['type']; ?></td>
+                <td><?php echo isset($user['identifiant']) ? $user['identifiant'] : 'No data'; ?></td>
+                <td><?php echo isset($user['nom']) ? $user['nom'] : 'No data'; ?></td>
+                <td><?php echo isset($user['prenom']) ? $user['prenom'] : 'No data'; ?></td>
+                <td><?php echo isset($user['email']) ? $user['email'] : 'No data'; ?></td>
+                <td><?php echo isset($user['telephone']) ? $user['telephone'] : 'No data'; ?></td>
+                <td><?php echo isset($user['age']) ? $user['age'] : 'No data'; ?></td>
+                <td><?php echo isset($user['poids']) ? $user['poids'] : 'No data'; ?></td>
+                <td><?php echo isset($user['taille']) ? $user['taille'] : 'No data'; ?></td>
+                <td><?php echo isset($user['type']) ? $user['type'] : 'No data'; ?></td>
+
                 </tr>
               <?php } ?>
               </tbody>
@@ -180,92 +201,93 @@ if ($users) {
       <?php } ?>
 
       <div class="result">
-        <h2>Données de capteur cardiaque</h2>
-        <table>
-          <tr>
-            <td><b>ID de la mesure :</b></td>
-            <td><?php echo $idMesureC; ?></td>
-          </tr>
-          <tr>
-            <td><b>Mesure cardiaque :</b></td>
-            <td><?php echo $mesureC; ?></td>
-          </tr>
-          <tr>
-            <td><b>Boitier :</b></td>
-            <td><?php echo $boitier; ?></td>
-          </tr>
-          <tr>
-            <td><b>Heure :</b></td>
-            <td><?php echo $heure; ?></td>
-          </tr>
-        </table>
-      </div>
+  <h2>Données de capteur cardiaque</h2>
+  <table>
+    <tr>
+      <td><b>ID de la mesure :</b></td>
+      <td><?php echo isset($idMesureC) ? $idMesureC : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Mesure cardiaque :</b></td>
+      <td><?php echo isset($mesureC) ? $mesureC : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Boitier :</b></td>
+      <td><?php echo isset($boitier) ? $boitier : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Heure :</b></td>
+      <td><?php echo isset($heure) ? $heure : 'No data'; ?></td>
+    </tr>
+  </table>
+</div>
 
-      <div class="result2">
-        <h2>Données de capteur sonore</h2>
-        <table>
-          <tr>
-            <td><b>ID de la mesure :</b></td>
-            <td><?php echo $idMesureS; ?></td>
-          </tr>
-          <tr>
-            <td><b>Mesure sonore :</b></td>
-            <td><?php echo $mesureS; ?></td>
-          </tr>
-          <tr>
-            <td><b>Boitier :</b></td>
-            <td><?php echo $boitier2; ?></td>
-          </tr>
-          <tr>
-            <td><b>Heure :</b></td>
-            <td><?php echo $heure2; ?></td>
-          </tr>
-        </table>
-      </div>
+<div class="result2">
+  <h2>Données de capteur sonore</h2>
+  <table>
+    <tr>
+      <td><b>ID de la mesure :</b></td>
+      <td><?php echo isset($idMesureS) ? $idMesureS : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Mesure sonore :</b></td>
+      <td><?php echo isset($mesureS) ? $mesureS : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Boitier :</b></td>
+      <td><?php echo isset($boitier2) ? $boitier2 : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Heure :</b></td>
+      <td><?php echo isset($heure2) ? $heure2 : 'No data'; ?></td>
+    </tr>
+  </table>
+</div>
 
-      <div class="result3">
-        <h2>Données de capteur temperature</h2>
-        <table>
-          <tr>
-            <td><b>ID de la mesure :</b></td>
-            <td><?php echo $idMesureT; ?></td>
-          </tr>
-          <tr>
-            <td><b>Mesure de la temperature :</b></td>
-            <td><?php echo $mesureT; ?></td>
-          </tr>
-          <tr>
-            <td><b>Boitier :</b></td>
-            <td><?php echo $boitier3; ?></td>
-          </tr>
-          <tr>
-            <td><b>Heure :</b></td>
-            <td><?php echo $heure3; ?></td>
-          </tr>
-        </table>
-      </div>
+<div class="result3">
+  <h2>Données de capteur temperature</h2>
+  <table>
+    <tr>
+      <td><b>ID de la mesure :</b></td>
+      <td><?php echo isset($idMesureT) ? $idMesureT : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Mesure de la temperature :</b></td>
+      <td><?php echo isset($mesureT) ? $mesureT : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Boitier :</b></td>
+      <td><?php echo isset($boitier3) ? $boitier3 : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Heure :</b></td>
+      <td><?php echo isset($heure3) ? $heure3 : 'No data'; ?></td>
+    </tr>
+  </table>
+</div>
 
-      <div class="result4">
-        <h2>Données de capteur GAZ</h2>
-        <table>
-          <tr>
-            <td><b>ID de la mesure :</b></td>
-            <td><?php echo $idMesureG; ?></td>
-          </tr>
-          <tr>
-            <td><b>Mesure du GAZ :</b></td>
-            <td><?php echo $mesureG; ?></td>
-          </tr>
-          <tr>
-            <td><b>Boitier :</b></td>
-            <td><?php echo $boitier4; ?></td>
-          </tr>
-          <tr>
-            <td><b>Heure :</b></td>
-            <td><?php echo $heure4; ?></td>
-          </tr>
-        </table>
-      </div>
+<div class="result4">
+  <h2>Données de capteur GAZ</h2>
+  <table>
+    <tr>
+      <td><b>ID de la mesure :</b></td>
+      <td><?php echo isset($idMesureG) ? $idMesureG : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Mesure du GAZ :</b></td>
+      <td><?php echo isset($mesureG) ? $mesureG : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Boitier :</b></td>
+      <td><?php echo isset($boitier4) ? $boitier4 : 'No data'; ?></td>
+    </tr>
+    <tr>
+      <td><b>Heure :</b></td>
+      <td><?php echo isset($heure4) ? $heure4 : 'No data'; ?></td>
+    </tr>
+  </table>
+</div>
+
 
     </div>
   </body>
