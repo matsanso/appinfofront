@@ -1,0 +1,278 @@
+
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1.5rem;
+}
+/* Style pour le header */
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: rgb(179, 65, 65);
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.dropdown {
+    display: var(--navUl);
+    color: red;
+
+}
+
+.dropdown-content {
+    margin: 0;
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
+    /*background-color: #f9f9f9;*/
+    width: 10%;
+    padding: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.443);
+    z-index: 100;
+    border-radius: 7px;
+
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+
+.titre {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+    font-size: 4rem;
+  }
+  
+  
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.superbounce a {
+    margin-left: 40px;
+    margin-right: 20px;
+    font-size: 30px;
+        color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.superbounce2 a {
+    margin-left: 40px;
+    margin-right: 20px;
+    font-size: 30px;
+        color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.superbounce :hover {
+    animation-name: rebondir;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.superbounce2 :hover {
+    animation-name: rebondir;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes rebondir {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.login a {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login a:hover {
+    background-color: #666;
+}
+
+
+.slides {
+    display: flex;
+
+    width: 40%;
+}
+
+.slides img {
+    display: flex;
+    width: 40%;
+    height: auto;
+    justify-content: space-around;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  .titre {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px;
+    font-size: 1.5rem;
+
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 1.5rem;
+
+  }
+  
+  table th {
+    text-align: left;
+    font-weight: bold;
+    padding: 8px 16px;
+  }
+  
+  table td {
+    padding: 8px 16px;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+
+/* Style pour le footer */
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+
+.social-media div {
+    display: inline-flex;
+    margin: 0 10px;
+
+}
+
+.social-media img {
+    height: 40px;
+    cursor: pointer;
+
+}
+
+
+.instagram {
+    transition: all .2s ease-in-out;
+}
+
+.instagram:hover {
+    transform: scale(1.2)
+}
+
+.facebook {
+    transition: all .2s ease-in-out;
+}
+
+.facebook:hover {
+    transform: scale(1.2)
+}
+
+.twitter {
+    transition: all .2s ease-in-out;
+}
+
+.twitter:hover {
+    transform: scale(1.2)
+}
+
+.copyright p {
+    height: 2px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.caroussel {
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+}
+
+.slides img {
+    margin: 0 20px; /* Espacer les images de 20px */
+}

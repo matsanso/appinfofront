@@ -1,0 +1,312 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+#container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #4a4a4a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.5rem;
+
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 14px 36px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 4.5rem;
+
+
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #4a4a4a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.5rem;
+
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* Style pour le header */
+
+header {
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: rgb(179, 65, 65);
+  border: none;
+  color: white;
+  padding: 15px 45px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.dropdown {
+  display: var(--navUl);
+  color: red;
+  margin-left: auto;
+
+}
+
+.dropdown-content {
+  margin: 0;
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1);
+  /*background-color: #f9f9f9;*/
+  
+  padding: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.443);
+  z-index: 100;
+  border-radius: 7px;
+
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px;
+
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+
+.logo {
+  margin-right: auto;
+}
+
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.superbounce a {
+margin-right: 20px;
+font-size: 30px;
+  color: #333;
+text-decoration: none;
+font-weight: bold;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.superbounce2 a {
+margin-left: 40px;
+margin-right: 20px;
+font-size: 30px;
+  color: #333;
+text-decoration: none;
+font-weight: bold;
+justify-content: center;
+align-items: center;
+}
+
+.superbounce :hover {
+animation-name: rebondir;
+animation-duration: 1s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: 1;
+}
+
+.superbounce2 :hover {
+animation-name: rebondir;
+animation-duration: 1s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: 1;
+}
+
+
+@keyframes rebondir {
+
+0% {
+  transform: scale(1);
+}
+
+50% {
+  transform: scale(1.1);
+}
+
+100% {
+  transform: scale(1);
+}
+}
+
+
+
+footer {
+  position: fixed;
+    bottom: 0;
+  background-color: #333;
+  padding: 50px;
+  width: 100%;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+
+
+.social-media div {
+  display: inline-flex;
+  margin: 0 10px;
+
+}
+
+.social-media img {
+  height: 40px;
+  cursor: pointer;
+
+}
+
+
+.instagram {
+  transition: all .2s ease-in-out;
+}
+
+.instagram:hover {
+  transform: scale(1.2)
+}
+
+.facebook {
+  transition: all .2s ease-in-out;
+}
+
+.facebook:hover {
+  transform: scale(1.2)
+}
+
+.twitter {
+  transition: all .2s ease-in-out;
+}
+
+.twitter:hover {
+  transform: scale(1.2)
+}
+
+.copyright p {
+  height: 2px;
+
+  font-size: 0.8rem;
+  text-align: center;
+}

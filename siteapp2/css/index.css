@@ -69,42 +69,6 @@ header {
   max-height: 50px;
 }
 
-
-/*barre de recherche*/
-
-.search-container {
-  display: flex;
-  align-items: center;
-
-}
-
-.search-icon {
-  font-size: 24px;
-  cursor: pointer;
-
-  /* Augmente le z-index pour que l'icÃ´ne reste au-dessus de la barre de recherche */
-  display: flex;
-  align-items: center;
-}
-
-input[type="text"] {
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 0.3s ease-in-out;
-  /* Ajoute une transition pour l'opacitÃ© */
-}
-
-.search-container:hover input[type="text"],
-input[type="text"].visible {
-  opacity: 1;
-  /* Affiche la barre de recherche lorsque la souris survole le conteneur ou lorsqu'elle contient du texte */
-}
-
 nav ul {
   list-style: none;
   margin: 0;
@@ -116,6 +80,8 @@ nav ul {
 
 .superbounce a {
   margin-left: 40px;
+    margin-right: 20px;
+    font-size: 30px;
   color: #333;
   text-decoration: none;
   font-weight: bold;
@@ -125,6 +91,8 @@ nav ul {
 
 .superbounce2 a {
   margin-left: 40px;
+  margin-right: 20px;
+  font-size: 30px;
   color: #333;
   text-decoration: none;
   font-weight: bold;
@@ -226,6 +194,8 @@ nav ul {
   padding: 20px;
   color: #000000;
   text-transform: uppercase;
+  font-size: 1.5rem;
+
 }
 
 
@@ -268,24 +238,31 @@ h1 {
 
 h2 {
   margin-top: 50px;
+  font-size: 2.5rem;
+
 }
 
 label {
   display: block;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 
 input[type="radio"] {
   margin-right: 10px;
+  transform: scale(1.5);
+
 }
 
 input[type="submit"] {
   display: block;
   margin-top: 30px;
   font-size: 18px;
+  border-radius: 5px;
   background-color: #008000;
   color: #ffffff;
+  font-size: 1.5rem;
+
 }
 
 .correct {

@@ -10,6 +10,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=appg10c_db;charset=utf8', 'root', ''
 // Récupère le nom d'utilisateur de la session
 $username = $_SESSION['username'];
 
+// Requête pour récupérer les noms des casernes
+$stmt = $pdo->query("SELECT nomcaserne FROM caserne");
+$casernes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
 // Recherche un utilisateur si le formulaire de recherche a été soumis
 if (isset($_POST['search_email'])) {
     $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = ?");
@@ -25,7 +29,7 @@ if (isset($_POST['update'])) {
     extract($_POST);
 
     // Prépare la requête SQL pour mettre à jour les données de l'utilisateur
-    $stmt = $pdo->prepare("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, taille = :taille, poids = :poids, age = :age WHERE email = :email");
+    $stmt = $pdo->prepare("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, taille = :taille, poids = :poids, age = :age, caserne = :caserne, ban = :ban WHERE email = :email");
 
     // Exécute la requête SQL avec les paramètres
     $stmt->execute(array(
@@ -36,8 +40,11 @@ if (isset($_POST['update'])) {
         ':taille' => $taille,
         ':poids' => $poids,
         ':age' => $age,
-        ':id' => $id
+        ':caserne' => $caserne,
+        ':ban' => $ban
+        
     ));
+
 
     // Redirige vers la page de profil mise à jour
     header('Location: profil2.php');
@@ -45,9 +52,25 @@ if (isset($_POST['update'])) {
 }
 // Vérifie si le formulaire de suppression a été soumis
 if (isset($_POST['delete'])) {
+    $user_id = $_POST['identifiant'];
+
+
+    
+    // Supprime toutes les lignes de la table "boitier" liées à l'utilisateur
+    $stmt = $pdo->prepare("DELETE b FROM capteurcardiaque b INNER JOIN utilisateur u ON b.idu = u.identifiant WHERE u.identifiant = ?");
+    $stmt->execute(array($_POST['identifiant']));
+
+
+    // Supprime toutes les lignes de la table "boitier" liées à l'utilisateur
+    $stmt = $pdo->prepare("DELETE b FROM boitier b INNER JOIN utilisateur u ON b.utilisateur = u.identifiant WHERE u.identifiant = ?");
+    $stmt->execute(array($_POST['identifiant']));
+
+    
     // Supprime l'utilisateur de la base de données
     $stmt = $pdo->prepare("DELETE FROM utilisateur WHERE email = ?");
     $stmt->execute(array($_POST['user_email']));
+
+
 
     // Redirige vers la page de profil
     header('Location: profil2.php');
@@ -69,7 +92,7 @@ if (isset($_POST['add_user'])) {
 
         $hashed_password = password_hash($motDePasse, PASSWORD_DEFAULT);
 
-        $stmt = $pdo->prepare("INSERT INTO utilisateur (motDePasse, nom, prenom, email, telephone, taille, poids, age, type) VALUES (:motDePasse, :nom, :prenom, :email, :telephone, :taille, :poids, :age, :type)");
+        $stmt = $pdo->prepare("INSERT INTO utilisateur (motDePasse, nom, prenom, email, telephone, taille, poids, age, type,caserne) VALUES (:motDePasse, :nom, :prenom, :email, :telephone, :taille, :poids, :age, :type, :caserne)");
 
         $stmt->execute(array(
             ':motDePasse' => $hashed_password,
@@ -80,7 +103,8 @@ if (isset($_POST['add_user'])) {
             ':taille' => $taille,
             ':poids' => $poids,
             ':age' => $age,
-            ':type' => $type
+            ':type' => $type,
+            ':caserne' => $caserne
         ));
 
         // Redirige vers la page de profil du nouvel utilisateur
@@ -101,15 +125,28 @@ if (isset($_POST['add_user'])) {
     <title>Profil utilisateur</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/nprofil2.css">
+    <!-- Google Translate Widget -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
 </head>
 <body>
 
-<div class="top-bar">
+<div id="top-bar">
     <a href="../html/index.html"><img src="../images/Mon projet (4).png" alt="Logo"></a>
-    <a href="profil2.php">Utilisateur</a>
-    <a href="Faq2.php">Faq</a>
-    <span><?php echo $username; ?>   </span>
-</div>
+        <a href="profil2.php">Utilisateur</a>
+        <a href="faq2.php">Faq</a>
+        <a href="addcaserne.php">Caserne</a>
+        <div id="user-menu">
+          <span><?php echo $username; ?></span>
+          <a href="../html/index.html" class="logout-button">Déconnexion</a>
+        </div>
+    </div>
 
 <div class="container">
     <h1>Recherche utilisateur</h1>
@@ -117,15 +154,25 @@ if (isset($_POST['add_user'])) {
         <label for="search_email">Rechercher par email :</label>
         <input type="email" name="search_email">
         <input type="submit" value="Rechercher">
-        <?php if (!empty($user)): ?>
-        <input type="hidden" name="user_email" value="<?php echo $user['email']; ?>">
-        <input type="submit" name="delete" value="Supprimer l'utilisateur" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
-    <?php endif; ?>
+        
+        <script>
+    function confirmSuppression() {
+        return confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?");
+    }
+</script>
+<?php if (!empty($user)): ?>
+    <input type="hidden" name="user_email" value="<?php echo $user['email']; ?>">
+    <input type="hidden" name="identifiant" value="<?php echo $user['identifiant']; ?>">
+
+    <input type="submit" name="delete" value="Supprimer l'utilisateur" onclick="return confirmSuppression();">
+<?php endif; ?>
+
 </form>
 
     <?php if (!empty($user)): ?>
         <h2>Profil de <?php echo $user['prenom'] . ' ' . $user['nom']; ?></h2>
         <form method="POST">
+            <label for="nom">id : <?php echo $user['identifiant'];?> </label>
             <label for="nom">Nom :</label>
             <input type="text" name="nom" value="<?php echo $user['nom']; ?>">
 
@@ -147,7 +194,29 @@ if (isset($_POST['add_user'])) {
             <label for="age">Âge :</label>
             <input type="number" name="age" value="<?php echo $user['age']; ?>">
 
-            <input type="submit" name="update" value="Enregistrer">
+            <label for="caserne">Caserne :</label>
+            <select name="caserne">
+                <?php foreach ($casernes as $caserne): ?>
+                    <option value="<?php echo $caserne; ?>" <?php if ($caserne === $user['caserne']) echo 'selected'; ?>><?php echo $caserne; ?></option>
+                <?php endforeach; ?>
+            </select>
+
+            <label for="ban">authoriser l'acces (si non = ban) :</label>
+            <select name="ban">
+                    <option value=" "> </option>
+                    <option value="oui">oui</option>
+                    <option value="non">non</option>
+            </select>
+
+            <script>
+                function confirmEnregistrement() {
+                    return confirm("Êtes-vous sûr de vouloir enregistrer les modifications ?");
+                }
+            </script>
+            
+            <input type="submit" name="update" value="Enregistrer" onclick="return confirmEnregistrement();">
+
+            
         </form>
         <?php elseif (isset($_POST['search_email']) && empty($user) && empty($error)): ?>
         <p>Aucun utilisateur avec cet email n'a été trouvé. Voulez-vous ajouter un nouvel utilisateur ?</p>
@@ -186,7 +255,14 @@ if (isset($_POST['add_user'])) {
                 <div class="error"><?php echo $error; ?></div>
             <?php endif; ?>
 
-            <input type="submit" name="add_user" value="Ajouter l'utilisateur">
+            <script>
+                function confirmEnregistrement() {
+                    return confirm("Êtes-vous sûr de vouloir ajouter cet utilisateur ?");
+                }
+            </script>
+            
+            <input type="submit" name="add_user" value="Ajouter l'utilisateur" onclick="return confirmEnregistrement();">
+
         </form>
     <?php endif; ?>
 </div>

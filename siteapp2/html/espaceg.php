@@ -13,10 +13,10 @@ $username = $_SESSION['username'];
 
 <head>
 
-    <title>Espace Administrateur2</title>
+    <title>Espace Gestionnaire</title>
     <meta charset="utf-8">
     <!-- importer le fichier de style -->
-    <link rel="stylesheet" href="../css/nvespaceadministrateur.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="../css/espaceg.css" media="screen" type="text/css" />
     <link rel="icon" href="../images/Mon projet (4).png">
 <!-- Google Translate Widget -->
 <div id="google_translate_element"></div>
@@ -31,22 +31,25 @@ $username = $_SESSION['username'];
 
 <body>
 
-    <div id="top-bar">
+<div id="top-bar">
     <a href="../html/index.html"><img src="../images/Mon projet (4).png" alt="Logo"></a>
-        <a href="profil2.php">Utilisateur</a>
-        <a href="faq2.php">Faq</a>
-        <a href="addcaserne.php">Caserne</a>
+    <a href="espacegestionnaire.php" >Utilisateur de la caserne</a>
+        <a href="infoscaserne.php">Info Caserne</a>
+        <a href="profilg.php" >Mon Profil</a>
         <div id="user-menu">
           <span><?php echo $username; ?></span>
           <a href="../html/index.html" class="logout-button">Déconnexion</a>
         </div>
     </div>
 
+
     <div id="container">
 
-        <h1>Espace Administrateur</h1>
+        <h1>Espace Gestionnaire</h1>
 
-        <p>Bienvenue dans votre espace administrateur. Ici, vous pouvez modifier ajouter supprimer ou bannir un utilisateur, et gerer la faq.</p>
+        <p>Bienvenue dans votre espace gestionnaire. Ici, vous pouvez retrouver un utilisateur et afficher ses données, gerer les informations de votre caserne et modifier votre profil.</p>
+
+        
 
     </div>
 </body>
