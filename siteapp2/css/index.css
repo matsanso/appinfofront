@@ -259,8 +259,8 @@ input[type="submit"] {
   margin-top: 30px;
   font-size: 18px;
   border-radius: 5px;
-  background-color: #008000;
-  color: #ffffff;
+  background-color: orange;
+  color: black;
   font-size: 1.5rem;
 
 }
