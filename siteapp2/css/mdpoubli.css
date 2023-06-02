@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgb(171, 222, 167), rgb(255, 255, 255));
+    background-image: linear-gradient(rgb(255, 176, 28), rgb(255, 255, 255));
     background-repeat: no-repeat;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
@@ -30,7 +30,7 @@ form {
 
 input[type=submit],
 input[type="register"] {
-    background: linear-gradient(to right, rgb(147, 254, 143), rgb(145, 145, 145));
+    background: linear-gradient(to right, rgb(255, 176, 28), rgb(214, 214, 214));
     color: rgb(255, 255, 255);
     padding: 14px 20px;
     margin: 8px 0;
