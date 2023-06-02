@@ -68,64 +68,39 @@ header {
 }
 
 
-/*barre de recherche*/
 
-.search-container {
-    display: flex;
-    align-items: center;
-
-}
-
-.search-icon {
-    font-size: 24px;
-    cursor: pointer;
-
-    /* Augmente le z-index pour que l'icône reste au-dessus de la barre de recherche */
-    display: flex;
-    align-items: center;
-}
-
-input[type="text"] {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 0.3s ease-in-out;
-    /* Ajoute une transition pour l'opacité */
-}
-
-.search-container:hover input[type="text"],
-input[type="text"].visible {
-    opacity: 1;
-    /* Affiche la barre de recherche lorsque la souris survole le conteneur ou lorsqu'elle contient du texte */
-}
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
 }
 
 .superbounce a {
     margin-left: 40px;
+    margin-right: 20px;
+    font-size: 30px;
     color: #333;
     text-decoration: none;
     font-weight: bold;
     display: flex;
     justify-content: center;
+    padding-top: 30px;
 }
 
 .superbounce2 a {
     margin-left: 40px;
+    margin-right: 20px;
+    font-size: 30px;
     color: #333;
     text-decoration: none;
     font-weight: bold;
     display: flex;
     justify-content: center;
+    padding-top: 30px;
+
 }
 
 .superbounce :hover {
@@ -193,14 +168,14 @@ section {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 
 p {
-    font-size: 16px;
+    font-size: 1.5rem;
 }
 
 .faq-icon {
@@ -215,18 +190,13 @@ p {
 footer {
     background-color: #333;
     padding: 50px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
 }
 
-.separator {
-    height: 2px;
-    background-color: #fff;
-    width: 100%;
-    margin-bottom: 1%;
-}
 
 .social-media div {
     display: inline-flex;
@@ -266,6 +236,7 @@ footer {
 }
 
 .copyright p {
+    height: 2px;
     font-size: 0.8rem;
     text-align: center;
 }
@@ -302,3 +273,5 @@ li {
 li:not(:last-child) {
     border-bottom: 1px solid #ccc;
 }
+
+

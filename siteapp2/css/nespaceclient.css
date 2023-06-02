@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    background-color: #f35e5e;
+    background-color: #ffe100;
     color: white;
     padding: 10px;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 #top-bar a:hover {
-    background-color: #f59191c9;
+    background-color: #ffed65;
     border-radius: 5px;
   }
 

@@ -16,9 +16,17 @@ $username = $_SESSION['username'];
     <title>Espace client</title>
     <meta charset="utf-8">
     <!-- importer le fichier de style -->
-    <link rel="stylesheet" href="../css/nvespaceclient.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="../css/nespaceclient.css" media="screen" type="text/css" />
     <link rel="icon" href="../images/Mon projet (4).png">
-
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
 </head>
 
 <body>
@@ -26,9 +34,13 @@ $username = $_SESSION['username'];
     <div id="top-bar">
     <a href="../html/index.html"><img src="../images/Mon projet (4).png" alt="Logo"></a>
         <a href="donnees.php" class="active">Données</a>
-        <a href="profil.php">Profil</a>
         <a href="aide.php">Aide</a>
-        <span>Bonjour, <?php echo $username; ?> !</span>
+        <a href="profil.php">Mon Profil</a>
+        <div id="user-menu">
+          <span><?php echo $username; ?></span>
+          <a href="../html/index.html" class="logout-button">Déconnexion</a>
+        </div>
+        
     </div>
 
     <div id="container">

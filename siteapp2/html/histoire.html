@@ -2,6 +2,15 @@
 <html>
 
 <head>
+	<!-- Google Translate Widget -->
+	<div id="google_translate_element"></div>
+	<script type="text/javascript">
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+	}
+	</script>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<!-- End of Google Translate Widget -->
 	<title>Notre histoire</title>
 	<link rel="stylesheet" type="text/css" href="../css/nhistoire.css">
 	<meta charset="utf-8">
@@ -15,9 +24,11 @@
 			<div class="superbounce">
 				<li><a href="produit.html">Produit</a></li>
 			</div>
-
 			<div class="superbounce2">
 				<li><a href="histoire.html">Histoire</a></li>
+			</div>
+			<div class="superbounce2">
+				<li><a href="../html/casernes.php">Casernes</a></li>
 			</div>
 			<div class="superbounce2">
 				<li><a href="../html/FAQ.php">FAQ</a></li>
@@ -34,6 +45,7 @@
 		<ul class="dropdown-content">
 			<li><a class="dropdown-item" href="../html/page_connexion_site.php">Connexion</a></li>
 			<li><a class="dropdown-item" href="../html/pageinscription.php">Inscription</a></li>
+			
 		</ul>
 	</div>
 </header>
@@ -133,7 +145,6 @@
 
 
 <footer>
-	<div class="separator"></div>
 	<div class="social-media">
 
 		<div class="instagram">
@@ -148,7 +159,6 @@
 		</div>
 
 	</div>
-	<div class="separator"></div>
 	<div class="copyright">
 		<p>Tous droits réservés &copy; 2023</p>
 	</div>

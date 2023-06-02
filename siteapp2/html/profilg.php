@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   ));
 
   // Redirige vers la page de profil mise à jour
-  header('Location: profil.php');
+  header('Location: profilg.php');
   exit;
 }
 ?>
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <title>Profil utilisateur</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../css/bprofil.css">
+  <link rel="stylesheet" href="../css/cprofilg.css">
   <!-- Google Translate Widget -->
   <div id="google_translate_element"></div>
   <script type="text/javascript">
@@ -66,15 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="top-bar">
     <a href="../html/index.html"><img src="../images/Mon projet (4).png" alt="Logo"></a>
-        <a href="donnees.php" >Données</a>
-        <a href="aide.php">Aide</a>
-        <a href="profil.php">Mon Profil</a>
-
+        <a href="espacegestionnaire.php" >Utilisateur de la caserne</a>
+        <a href="infoscaserne.php">Info Caserne</a>
+        <a href="profilg.php" >Mon Profil</a>
         <div id="user-menu">
           <span><?php echo $username; ?></span>
           <a href="../html/index.html" class="logout-button">Déconnexion</a>
         </div>
-        
     </div>
 
     <div class="container">
@@ -101,14 +99,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="age">Âge :</label>
         <input type="number" name="age" value="<?php echo $user['age']; ?>">
 
-        <script>
+            <script>
                 function confirmEnregistrement() {
                     return confirm("Êtes-vous sûr de vouloir enregistrer les modifications ?");
                 }
             </script>
             
             <input type="submit" name="update" value="Enregistrer" onclick="return confirmEnregistrement();">
-            
+
        </form>
     </div>
 

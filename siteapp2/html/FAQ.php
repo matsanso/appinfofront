@@ -14,7 +14,15 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 
 <head>
-
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- End of Google Translate Widget -->
     <title>Technologie de Protection pour les Combattants du Feu</title>
     <link rel="stylesheet" href="../css/FAQ.css">
     <link rel="icon" href="../images/Mon projet (4).png">
@@ -41,6 +49,9 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <li><a href="Histoire.html">Histoire</a></li>
                 </div>
                 <div class="superbounce2">
+					<li><a href="../html/casernes.php">Casernes</a></li>
+				</div>
+                <div class="superbounce2">
                     <li><a href="../html/FAQ.php">FAQ</a></li>
 
                 </div>
@@ -48,16 +59,7 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </ul>
         </nav>
 
-        <div class="search-container">
-            <span class="search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M21.71 20.29l-3.88-3.88A9.96 9.96 0 0 0 20 10c0-5.52-4.48-10-10-10S0 4.48 0 10s4.48 10 10 10c2.38 0 4.56-.82 6.41-2.17l3.88 3.88a.996.996 0 1 0 1.41-1.41zM10 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z">
-                    </path>
-                </svg>
-            </span> <!-- Symbole de loupe noire simple -->
-            <input type="text" id="search" placeholder="Recherche..." size="8" />
-        </div>
+    
         <script src="../js/index.js"></script>
 
         <div id="nav-dropdown" class="navbar-dropdown dropdown ml-3">
@@ -67,6 +69,7 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <ul class="dropdown-content">
                 <li><a class="dropdown-item" href="../html/page_connexion_site.php">Connexion</a></li>
                 <li><a class="dropdown-item" href="../html/pageinscription.php">Inscription</a></li>
+                
             </ul>
         </div>
 
@@ -88,7 +91,6 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
         <footer>
-            <div class="separator"></div>
             <div class="social-media">
 
                 <div class="instagram">
@@ -103,7 +105,6 @@ $faq_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
             </div>
-            <div class="separator"></div>
             <div class="copyright">
                 <p>Tous droits réservés &copy; 2023</p>
             </div>

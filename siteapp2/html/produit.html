@@ -3,10 +3,20 @@
 
 <head>
     <title>La ceinture</title>
-    <link rel="stylesheet" type="text/css" href="../css/produit.css">
+    <link rel="stylesheet" type="text/css" href="../css/nbcproduit.css">
     <link rel="icon" href="../images/Mon projet (4).png">
     <meta charset="utf-8">
     <script src="../js/produit.js"></script>
+
+    <!-- Google Translate Widget -->
+                <div id="google_translate_element"></div>
+              <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+              }
+              </script>
+              <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              <!-- End of Google Translate Widget -->
 </head>
 
 <header>
@@ -22,28 +32,31 @@
                 <li><a href="Histoire.html">Histoire</a></li>
             </div>
             <div class="superbounce2">
+                <li><a href="../html/casernes.php">Casernes</a></li>
+            </div>
+            <div class="superbounce2">
 				<li><a href="FAQ.php">FAQ</a></li>
 			</div>
         </ul>
     </nav>
 
-    
-    <script src="../js/index.js"></script>
 
     <div id="nav-dropdown" class="navbar-dropdown dropdown ml-3">
         <button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person"></i> Mon Compte <i class="bi bi-caret-down"></i>
         </button>
         <ul class="dropdown-content">
+            
             <li><a class="dropdown-item" href="../html/page_connexion_site.php">Connexion</a></li>
             <li><a class="dropdown-item" href="../html/pageinscription.php">Inscription</a></li>
+            
         </ul>
     </div>
 </header>
 
 
 
-<div class="container   text-center p-3">
+<body>
     <div class="row">
         <div class="col-12">
             <h1 class="titre">Le dispositif de protection le plus efficace du marché</h1>
@@ -61,10 +74,8 @@
         </div>
     </section>
     <div class="card">
-        <div class='py-2 d-block'>
-            <p class="f-4 p-2 center">Détails du produit : </p>
 
-            <div class='center border-1 border-round-1-label tableContainer' id="productDetail">
+            <div class='tableContainer' id="productDetail">
                 <table id='featuresTable'>
                     <tbody>
                         <tr>
@@ -116,11 +127,12 @@
                 </table>
             </div>
         </div>
+    </div>
+</body>
 
 
 
         <footer>
-            <div class="separator"></div>
             <div class="social-media">
 
                 <div class="instagram">
@@ -135,7 +147,6 @@
                 </div>
 
             </div>
-            <div class="separator"></div>
             <div class="copyright">
                 <p>Tous droits réservés &copy; 2023</p>
             </div>
